@@ -1,5 +1,5 @@
 # Cash-Register
-                                                           Cash Register web Application
+                                      Cash Register web Application
 This is a funny web Application Mostly Designed for shopkeepers. 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 This application helps to calculate how much amount of chnage shoule be return back to customer. This will save time and reduce the chances of error.
