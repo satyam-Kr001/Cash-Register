@@ -1,0 +1,60 @@
+const billAmount = document.querySelector("#bill-amount");
+const cashGiven = document.querySelector("#cash-given");
+const nextButton = document.querySelector("#next-button");
+const checkButton = document.querySelector("#check-button");
+const message = document.querySelector("#error-message");
+const noOfNotes = document.querySelectorAll(".no-of-notes");
+const displays = document.getElementsByTagName("p");
+
+const availableNotes = [2000, 500, 100, 20, 10, 5, 1];
+
+
+checkButton.addEventListener("click", function () {
+    hideMessage();
+    if (billAmount.value > 0) {
+        if (cashGiven.value >= billAmount.value) {
+            const amountToBeReturned = cashGiven.value - billAmount.value;
+            calculateChange(amountToBeReturned);
+        }
+        else {
+            showMessage("Do you wanna wash Plates?");
+            for (let i = 0; i < availableNotes.length; i++) {
+                noOfNotes[i].innerText = 0;
+            }
+        }
+    }
+    else {
+        showMessage("Invalid Bill Amount");
+        for (let i = 0; i < availableNotes.length; i++) {
+            noOfNotes[i].innerText = 0;
+        }
+    }
+});
+
+
+const nextDiv = document.getElementById("next");
+nextDiv.style.display = "none"
+nextButton.addEventListener("click", () => {
+    if (nextDiv.style.display == "none") {
+        nextDiv.style.display = "block";
+    }
+})
+
+
+function calculateChange(amountToBeReturned) {
+    for (let i = 0; i < availableNotes.length; i++) {
+        const numberOfNotes = Math.trunc(amountToBeReturned / availableNotes[i]);
+        amountToBeReturned %= availableNotes[i];
+        noOfNotes[i].innerText = numberOfNotes;
+    }
+}
+
+function hideMessage() {
+    message.style.display = "none";
+}
+
+function showMessage(msg) {
+    message.style.display = "block";
+    message.innerHTML = msg;
+
+}

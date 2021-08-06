@@ -1,0 +1,49 @@
+*{
+
+}
+table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: auto;
+    
+}
+.container hr{
+    width: 100%;
+}
+h1{
+    font-size: 30px;
+}
+.container input{
+    border: 5px solid white;
+    border-radius: 2px;
+    margin-top: 10px;
+}
+.container button  {
+    background-color: #4CAF50; /* Green */
+    border: 2px solid #4CAF50;
+    color: white;
+    padding: auto;
+    margin-top:10px;
+    text-align: center;
+    text-decoration: none;
+    /* display: inline-block; */
+    font-size: 16px;
+  }
+  .container caption{
+      margin-bottom:7px ;
+  }
+
+.container {
+    background-color: darkgreen;
+    color : white;
+    text-align: center;
+    text-transform: capitalize;
+    text-shadow: teal;
+    font-size: 18px;
+    font-family: cursive;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: auto;
+    padding: 10px;
+}
